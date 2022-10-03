@@ -1,4 +1,4 @@
-package orderScooter;
+package orderscooter;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -32,41 +32,33 @@ public class OrderScooter {
     //локатор на диалог
     private final By yesInDialog = By.xpath("//div[@class = 'Order_Modal__YZ-d3']");
     private final By confirmationDialog = By.className("Order_Modal__YZ-d3");
-
     //конструктор OrderScooter
     public OrderScooter(WebDriver driver) {
         this.driver = driver;
     }
-
     // метод клика на кнопку order
     public void clickOrderButtonHeader() {
         driver.findElement(orderButtonHeader).click();
     }
-
     public void confirmCookies() {
         driver.findElement(By.id("rcc-confirm-button")).click();
     }
-
     public void scrollToMiddleButton() {
         WebElement element = driver.findElement(orderButtonMiddle);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
     }
-
     // метод клика на кнопку order в разделе "Как это работает"
     public void clickOrderButtonMiddle() {
         driver.findElement(orderButtonMiddle).click();
     }
-
     //метод  ввода именни в поле имя
     public void setUserName(String username) {
         driver.findElement(nameField).sendKeys(username);
     }
-
     //метод  ввода фамилии в поле Фамилия
     public void setSurname(String surname) {
         driver.findElement(surnameField).sendKeys(surname);
     }
-
     //метод  ввода адреса в поле Адрес
     public void setAdress(String address) {
         driver.findElement(addressField).sendKeys(address);
@@ -76,40 +68,32 @@ public class OrderScooter {
     public void setMetro() {
         driver.findElement(metroField).click();
         driver.findElement(By.xpath("//div[@class='select-search__select']/ul/li/button")).click();
-
     }
-
     //метод  ввода  номера телефона в поле телефон
     public void setPhoneNumber(String phonenumber) {
         driver.findElement(phoneField).sendKeys(phonenumber);
     }
-
     //метод клика на кнопку Далее
     public void clickNextButton() {
         driver.findElement(nextButton).click();
     }
-
     //метод ввода даты доставки самоката
     public void setDeliveryDate() {
         driver.findElement(deliveryDateField).click();
         driver.findElement(By.xpath("//div[@class='react-datepicker__week'][2]/div[1]")).click();
     }
-
     //метод выбора продолжительности заказа
     public void setDurationOrder() {
         driver.findElement(durationOrderField).click();
         driver.findElement(By.xpath("//div[@class='Dropdown-menu']/div")).click();
     }
-
     //метод клика на кнопку подтвержения заказа самоката
     public void clickOrderScooterButton() {
         driver.findElement(orderScooterButton).click();
     }
-
     public void clickYesInDialog() {
         driver.findElement(yesInDialog).click();
     }
-
     public Boolean isPanelVisible() {
         return driver.findElement(confirmationDialog).isDisplayed();
     }

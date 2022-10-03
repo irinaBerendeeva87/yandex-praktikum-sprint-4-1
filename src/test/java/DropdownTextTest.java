@@ -1,4 +1,4 @@
-import dropdownText.HomePageScooter;
+import dropdowntext.HomePageScooter;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -9,7 +9,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-
 
 public class DropdownTextTest {
     HomePageScooter objHomePage;
@@ -29,7 +28,6 @@ public class DropdownTextTest {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
         // создай объект класса главной страницы приложения
         objHomePage = new HomePageScooter(driver);
-
     }
 
     @Test
@@ -42,7 +40,6 @@ public class DropdownTextTest {
     public void checkAccordion1() {
         objHomePage.clickPanel(1);
         Assert.assertTrue(objHomePage.isPanelVisible(1));
-
     }
 
     @Test
@@ -87,11 +84,3 @@ public class DropdownTextTest {
         driver.quit();
     }
 }
-
-
-
-
-
-
-
-

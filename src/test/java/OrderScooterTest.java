@@ -1,4 +1,4 @@
-import orderScooter.OrderScooter;
+import orderscooter.OrderScooter;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -23,15 +23,14 @@ public class OrderScooterTest {
         this.address = address;
         this.phonenumber = phonenumber;
     }
-
-    @Parameterized.Parameters  // добавили аннотацию
+    // добавили аннотацию
+    @Parameterized.Parameters(name = "Order scooter {index} -> Name: {0}, Second name: {1}, Address:{2}, Phone number:{3} ")
     public static String[][] gerOrderData() {
         return new String[][]{
                 {"Анна", "Виноградова", "винокурова-22", "89999999999"},
                 {"Олег", "Егоров", "Москва", "89999999699"}
         };
     }
-
     @Before
     public void before() {
         //драйвер для браузера Chrome
@@ -44,20 +43,17 @@ public class OrderScooterTest {
         // создай объект класса главной страницы приложения
         objOrderScooter = new OrderScooter(driver);
     }
-
     @Test
     public void orderPositive1() {
         objOrderScooter.clickOrderButtonHeader();
         createOrder();
     }
-
     @Test
     public void orderPositiveMiddleButton() {
         objOrderScooter.scrollToMiddleButton();
         objOrderScooter.clickOrderButtonMiddle();
         createOrder();
     }
-
     private void createOrder() {
         objOrderScooter.confirmCookies();
         objOrderScooter.setUserName(username);
@@ -72,12 +68,9 @@ public class OrderScooterTest {
         objOrderScooter.clickYesInDialog();
         objOrderScooter.isPanelVisible();
     }
-
-
     @After
     public void after() {
         // Закрыть браузер
         driver.quit();
     }
-
 }
