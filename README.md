@@ -1,7 +1,7 @@
 🚀**UI tests Yandex.Samokat**🚀
 
 As part of the training, I tested UI of the Yandex.Samokat training service using the JUnit 4 and Selenium .
-The project uses Java 11 and used the Maven build system and was tested in Google Chrome и Mozilla Firefox .
+The project used Java 11 and used the Maven build system and was tested in Google Chrome и Mozilla Firefox .
  
 📝**Written test scenarios**📝
 - click on Drop-down;
@@ -20,5 +20,3 @@ The project uses Java 11 and used the Maven build system and was tested in Googl
 
 1. Clone this repo and clone your version of the report. 
 2. Run AllTest.java
-3. Generate a report via command 
-***allure serve target/surefire-reports/***
