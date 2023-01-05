@@ -1,7 +1,7 @@
 🚀**UI tests Yandex.Samokat**🚀
 
 As part of the training, I tested UI of the Yandex.Samokat training service using the JUnit 4 and Selenium .
-The project used Java 11 and used the Maven build system and was tested in Google Chrome и Mozilla Firefox .
+The project used Java 11 and used the Maven build system and was tested in Google Chrome and Mozilla Firefox .
  
 📝**Written test scenarios**📝
 - click on Drop-down;
